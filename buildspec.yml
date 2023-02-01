@@ -13,7 +13,7 @@ phases:
       - npm run build
       - ls
 #     - aws s3 cp build/index.html s3://web1project --acl public-read
-      - aws s3 cp build/index.html s3://web1project
+      - aws s3 cp build/index.html s3://web1project --recursive
   post_build:
       commands:
       - echo "Deployed to S3"
