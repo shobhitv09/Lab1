@@ -12,7 +12,8 @@ phases:
       - echo Build started on `date`
       - npm run build
       - ls
-      - aws s3 cp build/index.html s3://web1project --acl public-read
+#     - aws s3 cp build/index.html s3://web1project --acl public-read
+      -  aws s3 cp s3://build/index.html s3://web1project
   post_build:
       commands:
       - echo "Deployed to S3"
