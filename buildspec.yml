@@ -2,16 +2,16 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 12
     commands:
       - echo Entered the install phase...
-      - yarn install 
+      - npm install
   build:
+    runtime-versions:
+      nodejs: 12
     commands:
-    - echo "This is build phase... Zipping my webpage"
- 
-  post_build:
-    commands:
-    - echo "Deployed to S3"
-artifacts:
-  files:
-    - '**/*'
+      - echo Build started on `date`
+      - npm run build
+  deploy:
+      - echo Deploying the on S3... 
