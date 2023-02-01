@@ -8,8 +8,6 @@ phases:
       - echo Entered the install phase...
       - npm install
   build:
-    runtime-versions:
-      nodejs: 12
     commands:
       - echo Build started on `date`
       - npm run build
