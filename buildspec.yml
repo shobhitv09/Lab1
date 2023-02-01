@@ -1,17 +1,17 @@
-language: node_js
-node_js:
-  - "stable"
-cache:
-  directories:
-    - node_modules
-script:
-  - npm test
-  - npm run build
+version: 0.2
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: master
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+      - yarn install 
+  build:
+    commands:
+    - echo "This is build phase... Zipping my webpage"
+ 
+  post_build:
+    commands:
+    - echo "Deployed to S3"
+artifacts:
+  files:
+    - '**/*'
