@@ -11,10 +11,11 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
+      - aws s3 cp build/ s3://web1project/
   post_build:
       commands:
       - echo "Deployed to S3"
-      - aws s3 cp build/ s3://web1project/
+#       - aws s3 cp build/ s3://web1project/
 artifacts:
   files:
     - '**/*'
