@@ -9,6 +9,10 @@ function App() {
         <p>
           This is a testing project
         </p>
+        <p>
+          I Have built my first CI/CD pipeline
+          </p>
+
         <a
           className="App-link"
           href="https://www.benthonlabs.com/"
